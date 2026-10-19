@@ -1,4 +1,4 @@
-# Igor Teixeira — Site
+# Igor Teixeira
 
 Site institucional (Story Maker & Social Media), HTML estático com GSAP + Lenis.
 
@@ -10,7 +10,7 @@ vercel.json       Vercel publica a pasta public/
 ```
 
 ## Deploy na Vercel
-1. vercel.com → Add New → Project → importe este repositório.
+1. vercel.com → Add New → Project → importe o repositório `igor-teixeira`.
 2. Framework Preset: **Other**. Não precisa de build. Clique em Deploy.
 
 ## Editar contatos

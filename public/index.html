@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Igor Teixeira — Vídeos e Social Media</title>
+<meta name="description" content="Igor Teixeira, Story Maker & Social Media em São Paulo. Roteiro, gravação e edição de vídeos verticais para empresas de toda São Paulo e gestão de redes sociais para todo o Brasil.">
+<meta name="theme-color" content="#05050a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Igor Teixeira — Vídeos que fazem o seu negócio ser visto">
+<meta property="og:description" content="Story Maker & Social Media em São Paulo. Vídeos verticais e gestão de redes sociais para empresas de todo o Brasil.">
+<meta property="og:image" content="media/p7.jpg">
+<meta property="og:locale" content="pt_BR">
+<link rel="icon" href="media/avatar.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="video" href="media/drop.mp4" type="video/mp4">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Igor Teixeira — Story Maker & Social Media","description":"Produção de vídeos verticais e gestão de social media para empresas.","image":"media/p7.jpg","address":{"@type":"PostalAddress","addressLocality":"São Paulo","addressRegion":"SP","addressCountry":"BR"},"areaServed":[{"@type":"State","name":"São Paulo"},{"@type":"Country","name":"Brasil"}],"telephone":"+55-11-96915-3683","email":"la.digitalmarke@gmail.com","serviceType":["Produção de vídeo","Social media","Edição de vídeo","Reels"]}
+</script>
+<style>
+:root{
+  --bg:#05050a; --bg-2:#0b0b14; --line:rgba(255,255,255,.09); --text:#f4f4f8; --muted:#9a9ab0;
+  --cyan:#00E5FF; --violet:#7B2FF7; --pink:#FF2BD6;
+  --grad:linear-gradient(120deg,var(--cyan),var(--violet) 55%,var(--pink));
+  --radius:18px; --ease:cubic-bezier(.22,1,.36,1);
+  --display:"Unbounded",system-ui,sans-serif; --body:"Manrope",system-ui,sans-serif;
+  --gut:clamp(16px,4vw,56px);
+}
+/* site is dark by design in both themes */
+:root[data-theme="light"],:root[data-theme="dark"]{--bg:#05050a}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#05050a}}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg);-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body.locked{overflow:hidden}
+a{color:inherit;text-decoration:none}
+img,video{display:block;max-width:100%}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+[hidden]{display:none!important}
+@media (max-width:760px){.row-label p{display:none}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* ---------- loader ---------- */
+#loader{position:fixed;inset:0;z-index:60;display:grid;place-items:center;background:var(--bg);transition:opacity .8s var(--ease),visibility .8s}
+#loader img{width:64px;height:64px;animation:pulse 1.4s ease-in-out infinite}
+#loader.done{opacity:0;visibility:hidden}
+@keyframes pulse{50%{transform:scale(.86);opacity:.6}}
+
+/* ---------- header ---------- */
+.nav{position:fixed;inset:0 0 auto;z-index:40;display:flex;align-items:center;justify-content:space-between;padding:18px var(--gut);opacity:0;transform:translateY(-12px);pointer-events:none;transition:opacity .6s var(--ease),transform .6s var(--ease),background .4s}
+.nav.show{opacity:1;transform:none;pointer-events:auto}
+.nav.solid{background:rgba(5,5,10,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav .brand img{height:30px;width:auto}
+.nav ul{display:flex;gap:28px;list-style:none;font-size:14px;color:var(--muted)}
+.nav ul a:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;font-weight:700;font-size:15px;position:relative;isolation:isolate;transition:transform .4s var(--ease)}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 10px 40px -12px rgba(123,47,247,.8)}
+.btn-primary::after{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--grad);filter:blur(18px);opacity:.0;z-index:-1;transition:opacity .4s}
+.btn-primary:hover::after{opacity:.7}
+.btn-ghost{border:1px solid rgba(255,255,255,.18)}
+.btn-ghost:hover{background:rgba(255,255,255,.06)}
+.btn svg{width:18px;height:18px}
+.nav .btn{padding:10px 18px;font-size:14px}
+@media (max-width:860px){.nav ul{display:none}}
+
+/* ---------- INTRO ---------- */
+#intro{position:relative;height:100vh;height:100svh;overflow:hidden;background:#000}
+.drop{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform-origin:50% 62%}
+.veil{position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 80% at 50% 50%,transparent 30%,rgba(0,0,0,.75) 100%)}
+.tint{position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 50% at 50% 55%,rgba(123,47,247,.35),transparent 70%);mix-blend-mode:screen;opacity:0}
+.bubbles{position:absolute;inset:0;pointer-events:none}
+.bub{position:absolute;left:50%;top:50%;width:120px;height:120px;border-radius:50%;opacity:0;pointer-events:auto;will-change:transform,width,height}
+.bub-in{position:absolute;inset:0;border-radius:inherit;overflow:hidden;box-shadow:0 30px 60px -20px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.22) inset}
+.bub video,.bub img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.gloss{position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:
+    radial-gradient(38% 30% at 30% 22%,rgba(255,255,255,.65),rgba(255,255,255,0) 70%),
+    radial-gradient(70% 70% at 50% 50%,transparent 58%,rgba(255,255,255,.28) 72%,transparent 80%),
+    radial-gradient(120% 120% at 70% 85%,rgba(0,229,255,.18),transparent 55%);
+  box-shadow:inset 0 0 26px rgba(255,255,255,.35),inset -10px -14px 30px rgba(0,0,0,.45)}
+.bub .play{position:absolute;inset:auto 10px 10px auto;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(0,0,0,.45);backdrop-filter:blur(6px);opacity:0;transition:opacity .3s}
+.bub.card .play{opacity:1}
+.bub .play svg{width:12px;height:12px;margin-left:2px}
+.bub.card:hover .bub-in{box-shadow:0 30px 60px -20px rgba(0,0,0,.8),0 0 0 2px var(--cyan) inset}
+
+.logo-wrap{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;width:min(560px,74vw);z-index:5;pointer-events:none}
+.logo-wrap img{width:100%;height:auto;filter:drop-shadow(0 6px 40px rgba(0,0,0,.6))}
+.logo-wrap h1{margin-top:18px;font-family:var(--body);font-weight:500;font-size:clamp(12px,1.4vw,15px);letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+.intro-ui{position:absolute;left:0;right:0;bottom:calc(28px + env(safe-area-inset-bottom));display:flex;flex-direction:column;align-items:center;gap:12px;z-index:6;opacity:0}
+.intro-ui span{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.hold{width:120px;height:2px;background:rgba(255,255,255,.15);border-radius:2px;overflow:hidden}
+.hold i{display:block;height:100%;width:100%;background:var(--grad);transform-origin:0 50%;transform:scaleX(0)}
+.skip{position:absolute;top:calc(18px + env(safe-area-inset-top));right:var(--gut);z-index:7;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6);padding:8px 12px;opacity:0}
+.skip:hover{color:#fff}
+.row-label{position:absolute;left:var(--gut);right:var(--gut);display:flex;justify-content:space-between;align-items:end;gap:16px;z-index:6;opacity:0;pointer-events:none}
+.row-label p{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.row-label h2{font-family:var(--display);font-weight:600;font-size:clamp(22px,3.2vw,44px);line-height:1.05;letter-spacing:-.02em}
+
+/* ---------- sections ---------- */
+section.block{position:relative;padding:clamp(90px,14vw,180px) var(--gut)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-bottom:24px}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--grad)}
+h2.title{font-family:var(--display);font-weight:600;font-size:clamp(32px,5.4vw,76px);line-height:1.02;letter-spacing:-.03em;max-width:15ch}
+.lead{color:var(--muted);font-size:clamp(17px,1.5vw,20px);max-width:52ch;margin-top:24px}
+
+#manifesto{min-height:100vh;display:flex;align-items:center}
+.manifesto{font-family:var(--display);font-weight:600;font-size:clamp(30px,5.6vw,84px);line-height:1.08;letter-spacing:-.03em;max-width:20ch}
+.manifesto .w{opacity:.14;display:inline-block}
+
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:64px}
+.svc{position:relative;padding:28px 24px 32px;border-radius:var(--radius);background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.015));border:1px solid var(--line);min-height:300px;display:flex;flex-direction:column;overflow:hidden;transition:transform .6s var(--ease),border-color .4s}
+.svc::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;background:var(--grad);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .5s}
+.svc:hover{transform:translateY(-6px)}
+.svc:hover::before{opacity:1}
+.svc .n{font-family:var(--display);font-size:13px;color:var(--muted)}
+.svc h3{font-family:var(--display);font-weight:600;font-size:21px;line-height:1.15;margin:auto 0 12px;letter-spacing:-.01em}
+.svc p{color:var(--muted);font-size:15px;line-height:1.55}
+.svc .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.05);margin:22px 0 40px}
+.svc .ic svg{width:22px;height:22px;stroke:url(#g1)}
+@media (max-width:1020px){.services{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.services{grid-template-columns:1fr}.svc{min-height:0}.svc h3{margin-top:0}}
+
+.marquee{border-block:1px solid var(--line);overflow:hidden;padding:26px 0;white-space:nowrap}
+.marquee-track{display:inline-flex;gap:48px;font-family:var(--display);font-weight:500;font-size:clamp(22px,3vw,40px);letter-spacing:-.02em;will-change:transform}
+.marquee-track span{display:inline-flex;align-items:center;gap:48px}
+.marquee-track span::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--grad)}
+.marquee-track span:nth-child(odd){color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.45)}
+
+.process{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(40px,8vw,120px);align-items:start}
+.process .sticky{position:sticky;top:120px}
+.steps{display:flex;flex-direction:column}
+.step{position:relative;padding:40px 0 40px 72px;border-top:1px solid var(--line)}
+.step:last-child{border-bottom:1px solid var(--line)}
+.step .num{position:absolute;left:0;top:40px;font-family:var(--display);font-size:14px;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line)}
+.step h3{font-family:var(--display);font-weight:600;font-size:clamp(22px,2.4vw,30px);letter-spacing:-.02em;margin-bottom:10px}
+.step p{color:var(--muted);max-width:46ch}
+.step .bar{position:absolute;left:0;top:-1px;height:1px;width:100%;background:var(--grad);transform-origin:0 50%;transform:scaleX(0)}
+@media (max-width:860px){.process{grid-template-columns:1fr}.process .sticky{position:static}}
+
+.region{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(40px,6vw,96px);align-items:center}
+.region-map{position:relative;aspect-ratio:1;max-width:520px;width:100%;justify-self:center}
+.region-map svg{width:100%;height:100%;overflow:visible}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+.chip{padding:10px 16px;border:1px solid var(--line);border-radius:999px;font-size:14px;color:var(--muted)}
+.chip.main{color:#fff;border-color:transparent;background:linear-gradient(var(--bg),var(--bg)) padding-box,var(--grad) border-box;border:1px solid transparent}
+@media (max-width:860px){.region{grid-template-columns:1fr}.region-map{max-width:360px}}
+
+.faq{max-width:900px;margin:56px 0 0}
+.faq details{border-top:1px solid var(--line)}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 0;font-family:var(--display);font-weight:500;font-size:clamp(17px,1.8vw,22px);letter-spacing:-.01em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{flex:none;width:30px;height:30px;border-radius:50%;border:1px solid var(--line);position:relative;transition:transform .5s var(--ease),background .3s}
+.faq summary i::before,.faq summary i::after{content:"";position:absolute;left:50%;top:50%;width:11px;height:1.5px;background:#fff;transform:translate(-50%,-50%)}
+.faq summary i::after{transform:translate(-50%,-50%) rotate(90deg)}
+.faq details[open] summary i{transform:rotate(45deg);background:rgba(255,255,255,.06)}
+.faq .ans{color:var(--muted);padding:0 0 28px;max-width:62ch}
+
+.faq-contact{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:900px;margin-top:40px}
+.faq-contact>*{padding:20px 22px;border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,.03);display:flex;flex-direction:column;gap:4px;transition:border-color .3s}
+.faq-contact a:hover{border-color:var(--cyan)}
+.faq-contact small{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.faq-contact strong{font-weight:600;font-size:16px;word-break:break-word}
+@media (max-width:760px){.faq-contact{grid-template-columns:1fr}}
+#contato{text-align:center;overflow:hidden}
+.cta-orb{position:absolute;left:50%;top:50%;width:min(900px,140vw);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(123,47,247,.45),rgba(255,43,214,.12) 45%,transparent 68%);filter:blur(30px);pointer-events:none}
+#contato h2{font-family:var(--display);font-weight:700;font-size:clamp(38px,8vw,120px);line-height:.98;letter-spacing:-.04em;position:relative}
+#contato .lead{margin-inline:auto;position:relative}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:44px;position:relative}
+.small{font-size:13px;color:var(--muted);margin-top:18px;position:relative}
+
+footer{padding:40px var(--gut) calc(40px + env(safe-area-inset-bottom));border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center;color:var(--muted);font-size:14px}
+footer img{height:26px;width:auto}
+footer nav{display:flex;gap:22px}
+footer a:hover{color:#fff}
+
+.fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));z-index:45;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#25D366;color:#fff;box-shadow:0 12px 30px -8px rgba(37,211,102,.6);transform:scale(0);transition:transform .5s var(--ease)}
+.fab.show{transform:scale(1)}
+.fab svg{width:28px;height:28px}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:80;display:grid;place-items:center;background:rgba(3,3,8,.86);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s}
+.modal.open{opacity:1;visibility:visible}
+.modal video{height:min(86vh,86svh);width:auto;max-width:92vw;aspect-ratio:9/16;object-fit:cover;border-radius:22px;background:#000;box-shadow:0 40px 120px -20px rgba(123,47,247,.5)}
+.modal .x{position:absolute;top:calc(16px + env(safe-area-inset-top));right:16px;width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.08);font-size:24px;line-height:1}
+.modal .nv{position:absolute;top:50%;transform:translateY(-50%);width:50px;height:50px;border-radius:50%;background:rgba(255,255,255,.08);font-size:20px}
+.modal .prev{left:max(12px,calc(50% - min(86vh,86svh)*.28 - 80px))}
+.modal .next{right:max(12px,calc(50% - min(86vh,86svh)*.28 - 80px))}
+.modal .x:hover,.modal .nv:hover{background:rgba(255,255,255,.16)}
+
+/* cursor */
+.cursor{position:fixed;left:0;top:0;z-index:90;pointer-events:none;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;transform:scale(0);mix-blend-mode:normal}
+@media (hover:none){.cursor{display:none}}
+
+.reveal{opacity:0;transform:translateY(40px)}
+
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none}
+  .manifesto .w{opacity:1}
+  #loader img{animation:none}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Onde você atende?", "acceptedAnswer": {"@type": "Answer", "text": "Gravações presenciais em São Paulo: capital, Grande São Paulo e interior sob consulta. A gestão de redes sociais é feita online, então atendo empresas de qualquer lugar do Brasil."}}, {"@type": "Question", "name": "Quanto custa um vídeo?", "acceptedAnswer": {"@type": "Answer", "text": "Depende da quantidade de vídeos, do tempo de gravação e se inclui gestão das redes. Me chama no WhatsApp com o que você precisa e eu te passo um orçamento fechado, sem surpresa."}}, {"@type": "Question", "name": "Em quanto tempo recebo os vídeos?", "acceptedAnswer": {"@type": "Answer", "text": "Normalmente em poucos dias após a gravação. O prazo exato fica combinado no orçamento, junto com as rodadas de ajuste."}}, {"@type": "Question", "name": "Tenho vergonha de câmera. Funciona mesmo assim?", "acceptedAnswer": {"@type": "Answer", "text": "Funciona. Eu dirijo a gravação, passo as falas com você e o roteiro já é pensado para o seu jeito. Dá também para fazer vídeos mostrando o espaço, os produtos e a equipe, sem você aparecer."}}, {"@type": "Question", "name": "Minha empresa fica fora de São Paulo. Você consegue me atender?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. A gestão de social media, o roteiro e a edição funcionam 100% online. Você grava com o celular seguindo o meu roteiro e direção, e eu transformo em conteúdo profissional."}}, {"@type": "Question", "name": "Você também posta e cuida do meu Instagram?", "acceptedAnswer": {"@type": "Answer", "text": "Sim, com o serviço de gestão de redes: calendário, legendas e postagens. Você pode contratar só os vídeos ou o pacote completo."}}, {"@type": "Question", "name": "Para quais redes os vídeos servem?", "acceptedAnswer": {"@type": "Answer", "text": "Instagram (Reels e Stories), TikTok, YouTube Shorts, Facebook e status do WhatsApp. Todos entregues no formato vertical 9:16."}}, {"@type": "Question", "name": "Como faço para pedir um orçamento?", "acceptedAnswer": {"@type": "Answer", "text": "Pelo WhatsApp (11) 96915-3683 ou pelo e-mail la.digitalmarke@gmail.com. Me conta sobre a sua empresa e o que você quer mostrar, e eu respondo com uma proposta."}}]}</script>
+</head>
+<body class="locked">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00E5FF"/><stop offset=".55" stop-color="#7B2FF7"/><stop offset="1" stop-color="#FF2BD6"/></linearGradient></defs></svg>
+
+<div id="loader" aria-hidden="true"><img src="media/avatar.svg" alt=""></div>
+
+<header class="nav" id="nav">
+  <a href="#intro" class="brand" aria-label="Igor Teixeira — início"><img src="media/logo.svg" alt="Igor Teixeira"></a>
+  <ul>
+    <li><a href="#trabalhos">Trabalhos</a></li>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#processo">Processo</a></li>
+    <li><a href="#faq">Dúvidas</a></li>
+  </ul>
+  <a class="btn btn-primary" data-wa href="#contato">Orçamento</a>
+</header>
+
+<main>
+<!-- ================= INTRO ================= -->
+<section id="intro" aria-label="Abertura">
+  <video class="drop" id="drop" src="media/drop.mp4" poster="media/drop.jpg" muted playsinline preload="auto" aria-hidden="true"></video>
+  <div class="tint"></div>
+  <div class="veil"></div>
+  <div class="bubbles" id="bubbles" aria-label="Trabalhos recentes"></div>
+  <div class="logo-wrap" id="logoWrap">
+    <img src="media/logo.svg" alt="Igor Teixeira — Story Maker & Social Media" width="502" height="120">
+    <h1>Vídeos que fazem empresas serem vistas</h1>
+  </div>
+  <div class="row-label" id="rowLabel"><h2>Trabalhos <span class="grad-text">recentes</span></h2><p>Toque para assistir</p></div>
+  <div class="intro-ui" id="introUi"><span id="introHint">Role para explorar</span><div class="hold"><i id="holdBar"></i></div></div>
+  <button class="skip" id="skip">Pular intro</button>
+</section>
+<span id="trabalhos" class="sr">Trabalhos</span>
+
+<!-- ================= MANIFESTO ================= -->
+<section class="block" id="manifesto">
+  <p class="manifesto" id="manifestoText">Seu negócio já tem uma boa história. Eu transformo ela em vídeo que para o dedo no feed e faz o cliente bater na sua porta.</p>
+</section>
+
+<!-- ================= SERVIÇOS ================= -->
+<section class="block" id="servicos">
+  <p class="eyebrow reveal">O que eu faço</p>
+  <h2 class="title reveal">Do roteiro ao post. <span class="grad-text">Você só aparece.</span></h2>
+  <p class="lead reveal">Produção completa de vídeos verticais para Instagram, TikTok e WhatsApp, pensada para empresas que querem ser vistas, lembradas e escolhidas.</p>
+  <div class="services">
+    <article class="svc reveal"><span class="n">01</span><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h12l4 4v12H4z"/><path d="M8 12h8M8 16h5"/></svg></div><h3>Roteiro e estratégia</h3><p>Ganchos, falas e sequência de cenas definidos antes de gravar. Cada vídeo tem um objetivo: atrair, convencer ou vender.</p></article>
+    <article class="svc reveal"><span class="n">02</span><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3"/></svg></div><h3>Gravação no seu negócio</h3><p>Eu vou até você em São Paulo com equipamento, luz e direção. Você não precisa saber gravar, só estar presente.</p></article>
+    <article class="svc reveal"><span class="n">03</span><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v18M18 3v18M3 8h6M15 8h6M3 16h6M15 16h6"/></svg></div><h3>Edição e motion</h3><p>Cortes no ritmo do feed, legendas dinâmicas, cor e som tratados. O tipo de acabamento que segura a atenção até o fim.</p></article>
+    <article class="svc reveal"><span class="n">04</span><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M12 7v5l3 2"/><path d="M3 3v5h5"/></svg></div><h3>Gestão de redes</h3><p>Calendário de postagens, legendas e constância. Seu perfil ativo todo mês, sem você precisar pensar nisso.</p></article>
+  </div>
+</section>
+
+<div class="marquee" aria-label="Segmentos atendidos"><div class="marquee-track" id="marquee">
+  <span>Restaurantes</span><span>Estética e beleza</span><span>Automotivo</span><span>Óticas</span><span>Moda e varejo</span><span>Saúde</span><span>Comércio local</span>
+</div></div>
+
+<!-- ================= PROCESSO ================= -->
+<section class="block" id="processo">
+  <div class="process">
+    <div class="sticky">
+      <p class="eyebrow reveal">Como funciona</p>
+      <h2 class="title reveal">Três etapas. <span class="grad-text">Zero complicação.</span></h2>
+      <p class="lead reveal">Você não precisa entender de vídeo para ter um vídeo bem feito. Precisa só contar o que quer mostrar. O resto é comigo.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><i class="bar"></i><span class="num">01</span><h3>Conversa e roteiro</h3><p>Entendo seu negócio, seu cliente e o que precisa vender. Saio com o roteiro de cada vídeo pronto para aprovação.</p></div>
+      <div class="step"><i class="bar"></i><span class="num">02</span><h3>Gravação</h3><p>Uma visita ao seu espaço. Equipamento, luz e enquadramento resolvidos. Eu dirijo, você fala naturalmente.</p></div>
+      <div class="step"><i class="bar"></i><span class="num">03</span><h3>Edição e entrega</h3><p>Ritmo, legendas, cor e som ajustados. Você acompanha, pede ajustes e recebe tudo pronto para postar.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REGIÃO ================= -->
+<section class="block" id="regiao">
+  <div class="region">
+    <div>
+      <p class="eyebrow reveal">Onde eu atendo</p>
+      <h2 class="title reveal">Gravo em <span class="grad-text">São Paulo.</span> Cuido das redes no Brasil todo.</h2>
+      <p class="lead reveal">Gravação presencial em toda a capital e Grande São Paulo. A gestão de social media é 100% online, então atendo empresas de qualquer estado.</p>
+      <div class="chips reveal"><span class="chip main">São Paulo – capital</span><span class="chip">Grande São Paulo</span><span class="chip">Interior de SP</span><span class="chip main">Social media: Brasil todo</span></div>
+    </div>
+    <div class="region-map" aria-hidden="true">
+      <svg viewBox="0 0 400 400" id="radar">
+        <g fill="none" stroke="rgba(255,255,255,.1)">
+          <circle cx="200" cy="200" r="60"/><circle cx="200" cy="200" r="110"/><circle cx="200" cy="200" r="160"/><circle cx="200" cy="200" r="198" stroke-dasharray="2 6"/>
+        </g>
+        <g class="pulse"><circle cx="200" cy="200" r="20" fill="none" stroke="url(#g1)" stroke-width="2"/></g>
+        <g id="towns" font-family="Manrope" font-size="12" fill="#9a9ab0">
+          <circle cx="200" cy="200" r="7" fill="url(#g1)"/><text x="200" y="232" text-anchor="middle" fill="#fff" font-weight="700" font-size="14">São Paulo</text>
+          <circle cx="262" cy="178" r="4" fill="#fff"/><text x="272" y="174">Rio de Janeiro</text>
+          <circle cx="232" cy="118" r="4" fill="#fff"/><text x="242" y="114">Belo Horizonte</text>
+          <circle cx="170" cy="72" r="4" fill="#fff"/><text x="160" y="66" text-anchor="end">Brasília</text>
+          <circle cx="300" cy="40" r="4" fill="#fff"/><text x="310" y="36">Salvador</text>
+          <circle cx="150" cy="262" r="4" fill="#fff"/><text x="140" y="258" text-anchor="end">Curitiba</text>
+          <circle cx="120" cy="340" r="4" fill="#fff"/><text x="110" y="352" text-anchor="end">Porto Alegre</text>
+        </g>
+        <g stroke="url(#g1)" stroke-width="1" fill="none" id="links" opacity=".7">
+          <path d="M200 200 L262 178"/><path d="M200 200 L232 118"/><path d="M200 200 L170 72"/><path d="M200 200 L300 40"/><path d="M200 200 L150 262"/><path d="M200 200 L120 340"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="block" id="faq">
+  <p class="eyebrow reveal">Dúvidas</p>
+  <h2 class="title reveal">Antes de você perguntar.</h2>
+  <div class="faq">
+    <details class="reveal"><summary>Onde você atende? <i></i></summary><p class="ans">Gravações presenciais em São Paulo: capital, Grande São Paulo e interior sob consulta. A gestão de redes sociais é feita online, então atendo empresas de qualquer lugar do Brasil.</p></details>
+    <details class="reveal"><summary>Quanto custa um vídeo? <i></i></summary><p class="ans">Depende da quantidade de vídeos, do tempo de gravação e se inclui gestão das redes. Me chama no WhatsApp com o que você precisa e eu te passo um orçamento fechado, sem surpresa.</p></details>
+    <details class="reveal"><summary>Em quanto tempo recebo os vídeos? <i></i></summary><p class="ans">Normalmente em poucos dias após a gravação. O prazo exato fica combinado no orçamento, junto com as rodadas de ajuste.</p></details>
+    <details class="reveal"><summary>Tenho vergonha de câmera. Funciona mesmo assim? <i></i></summary><p class="ans">Funciona. Eu dirijo a gravação, passo as falas com você e o roteiro já é pensado para o seu jeito. Dá também para fazer vídeos mostrando o espaço, os produtos e a equipe, sem você aparecer.</p></details>
+    <details class="reveal"><summary>Minha empresa fica fora de São Paulo. Você consegue me atender? <i></i></summary><p class="ans">Sim. A gestão de social media, o roteiro e a edição funcionam 100% online. Você grava com o celular seguindo o meu roteiro e direção, e eu transformo em conteúdo profissional.</p></details>
+    <details class="reveal"><summary>Você também posta e cuida do meu Instagram? <i></i></summary><p class="ans">Sim, com o serviço de gestão de redes: calendário, legendas e postagens. Você pode contratar só os vídeos ou o pacote completo.</p></details>
+    <details class="reveal"><summary>Para quais redes os vídeos servem? <i></i></summary><p class="ans">Instagram (Reels e Stories), TikTok, YouTube Shorts, Facebook e status do WhatsApp. Todos entregues no formato vertical 9:16.</p></details>
+    <details class="reveal"><summary>Como faço para pedir um orçamento? <i></i></summary><p class="ans">Pelo WhatsApp (11) 96915-3683 ou pelo e-mail la.digitalmarke@gmail.com. Me conta sobre a sua empresa e o que você quer mostrar, e eu respondo com uma proposta.</p></details>
+  </div>
+  <div class="faq-contact reveal">
+    <a data-wa href="#contato"><small>WhatsApp</small><strong>(11) 96915-3683</strong></a>
+    <a data-mail href="#contato"><small>E-mail</small><strong>la.digitalmarke@gmail.com</strong></a>
+    <div><small>Localização</small><strong>São Paulo – SP · Brasil</strong></div>
+  </div>
+</section>
+
+<!-- ================= CONTATO ================= -->
+<section class="block" id="contato">
+  <div class="cta-orb"></div>
+  <p class="eyebrow reveal" style="position:relative">Vamos gravar</p>
+  <h2 class="reveal">Seu próximo cliente<br>está <span class="grad-text">rolando o feed.</span></h2>
+  <p class="lead reveal">Me conta sobre o seu negócio e eu te mostro como ele pode aparecer em vídeo. A conversa é rápida e sem compromisso.</p>
+  <div class="cta-row reveal">
+    <a class="btn btn-primary" data-wa href="#contato"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.5 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg>Chamar no WhatsApp</a>
+    <a class="btn btn-ghost" data-ig href="#contato">Ver Instagram</a>
+  </div>
+  <p class="small reveal">Gravação em São Paulo · Social media para todo o Brasil</p>
+</section>
+</main>
+
+<footer>
+  <img src="media/logo.svg" alt="Igor Teixeira">
+  <nav><a data-ig href="#contato">Instagram</a><a data-wa href="#contato">WhatsApp</a><a data-mail href="#contato">E-mail</a></nav>
+  <span>© <span id="yr"></span> Igor Teixeira · São Paulo – SP</span>
+</footer>
+
+<a class="fab" id="fab" data-wa href="#contato" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.5 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg></a>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Vídeo">
+  <button class="x" id="mClose" aria-label="Fechar">×</button>
+  <button class="nv prev" id="mPrev" aria-label="Anterior">←</button>
+  <video id="mVideo" playsinline controls></video>
+  <button class="nv next" id="mNext" aria-label="Próximo">→</button>
+</div>
+<div class="cursor" id="cursor">Assistir</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+/* ===== CONTATOS: preencha aqui ===== */
+const CONTACT = {
+  whatsapp: "5511969153683",
+  whatsappMsg: "Olá Igor! Vi seu site e quero conversar sobre vídeos para o meu negócio.",
+  instagram: "",                // ex.: "https://instagram.com/seuperfil"
+  email: "la.digitalmarke@gmail.com"
+};
+const VIDEOS = [1,2,3,4,5,6,7].map(n => ({src:`media/v${n}.mp4`, poster:`media/p${n}.jpg`}));
+/* =================================== */
+
+document.getElementById('yr').textContent = new Date().getFullYear();
+(function wireContacts(){
+  const wa = CONTACT.whatsapp ? `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(CONTACT.whatsappMsg)}` : '#contato';
+  document.querySelectorAll('[data-wa]').forEach(a=>{a.href=wa; if(CONTACT.whatsapp){a.target='_blank';a.rel='noopener'}});
+  document.querySelectorAll('[data-ig]').forEach(a=>{ if(CONTACT.instagram){a.href=CONTACT.instagram;a.target='_blank';a.rel='noopener'} else a.hidden=true });
+  document.querySelectorAll('[data-mail]').forEach(a=>{ if(CONTACT.email){a.href='mailto:'+CONTACT.email} else a.hidden=true });
+})();
+
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $ = s => document.querySelector(s);
+gsap.registerPlugin(ScrollTrigger);
+
+/* ---------- smooth scroll ---------- */
+const lenis = new Lenis({lerp:.09, smoothWheel:true});
+lenis.on('scroll', ScrollTrigger.update);
+gsap.ticker.add(t => lenis.raf(t*1000));
+gsap.ticker.lagSmoothing(0);
+lenis.stop(); window.scrollTo(0,0);
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+
+/* ---------- build bubbles ---------- */
+const wrap = $('#bubbles');
+const bubs = VIDEOS.map((v,i)=>{
+  const b = document.createElement('button');
+  b.className='bub'; b.setAttribute('aria-label',`Assistir trabalho ${i+1}`);
+  b.innerHTML = `<div class="bub-in"><video src="${v.src}" poster="${v.poster}" muted loop playsinline preload="metadata" aria-hidden="true"></video><div class="gloss"></div></div><span class="play"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z" fill="#fff"/></svg></span>`;
+  b.addEventListener('click',()=>openModal(i));
+  wrap.appendChild(b); return b;
+});
+const vids = bubs.map(b=>b.querySelector('video'));
+
+/* ---------- geometry ---------- */
+const W=()=>innerWidth, H=()=>innerHeight, mobile=()=>innerWidth<760;
+const N = bubs.length;
+const ANG = [-90,-38,8,52,128,172,218];            // ângulos ao redor da logo
+const SIZE = [1,.78,.92,.7,.86,.74,.95];
+function orbit(i){
+  const m = mobile();
+  const rx = W()*(m?.36:.37), ry = H()*(m?.33:.33);
+  const a = ANG[i]*Math.PI/180;
+  const s = (m?Math.min(W()*.22,96):Math.min(W()*.11,170))*SIZE[i];
+  return {x:Math.cos(a)*rx, y:Math.sin(a)*ry, w:s, h:s};
+}
+function rowMetrics(){
+  const m = mobile(), gap = m?10:16, pad = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--gut'))||24;
+  let cw = (W()-pad*2-gap*(N-1))/N;
+  cw = Math.max(cw, m?118:0);
+  let ch = cw*16/9;
+  const maxH = H()*(m?.5:.56);
+  if (ch>maxH){ ch=maxH; cw=ch*9/16; }
+  const total = cw*N+gap*(N-1);
+  return {cw,ch,gap,total,overflow:Math.max(0,total-(W()-pad*2)),pad};
+}
+function rowPos(i){
+  const r = rowMetrics();
+  const startX = r.overflow? (-W()/2 + r.pad + r.cw/2) : (-r.total/2 + r.cw/2);
+  return {x:startX + i*(r.cw+r.gap), y:H()*.08, w:r.cw, h:r.ch};
+}
+
+/* ---------- intro sequence ---------- */
+const drop = $('#drop');
+let burstDone=false, userTried=false, autoTimer=null, holdTween=null;
+['wheel','touchmove','keydown'].forEach(ev=>addEventListener(ev,()=>{ userTried=true },{passive:true}));
+
+function hideLoader(){ $('#loader').classList.add('done'); }
+
+function startIntro(){
+  hideLoader();
+  gsap.set(bubs,{xPercent:-50,yPercent:-50,x:0,y:H()*.12,width:20,height:20,opacity:0});
+  gsap.set('#logoWrap',{opacity:0,scale:.92,filter:'blur(14px)'});
+  if (reduce){ burst(true); return; }
+  const p = drop.play(); if (p && p.catch) p.catch(()=>{});
+  let fired=false;
+  const fire=()=>{ if(!fired){fired=true; burst(false);} };
+  drop.addEventListener('timeupdate',()=>{ if(drop.currentTime>=2.05) fire(); });
+  setTimeout(fire, 3200);                       // fallback se o vídeo não tocar
+}
+
+function burst(instant){
+  vids.forEach(v=>{ const p=v.play(); if(p&&p.catch)p.catch(()=>{}); });
+  const tl = gsap.timeline({onComplete:afterBurst});
+  if (instant){
+    bubs.forEach((b,i)=>{const o=orbit(i); gsap.set(b,{x:o.x,y:o.y,width:o.w,height:o.h,opacity:1})});
+    gsap.set('#logoWrap',{opacity:1,scale:1,filter:'blur(0px)'});
+    gsap.set(['.drop'],{opacity:.35}); afterBurst(); return;
+  }
+  tl.to('.tint',{opacity:1,duration:.5,ease:'power2.out'},0)
+    .to('.tint',{opacity:.5,duration:1.4},.5)
+    .to(drop,{opacity:.38,scale:1.06,filter:'blur(3px)',duration:1.6,ease:'power2.out'},.15);
+  bubs.forEach((b,i)=>{
+    const o = orbit(i);
+    tl.to(b,{opacity:1,duration:.25},.05+i*.06)
+      .to(b,{x:o.x,width:o.w,height:o.h,duration:1.35,ease:'expo.out'},.05+i*.06)
+      .to(b,{keyframes:{y:[H()*.12, o.y - 40 - Math.random()*40, o.y]},duration:1.45,ease:'power2.out'},.05+i*.06);
+  });
+  tl.to('#logoWrap',{opacity:1,scale:1,filter:'blur(0px)',duration:1.3,ease:'expo.out'},.55);
+}
+
+function afterBurst(){
+  burstDone=true;
+  // flutuação suave (no wrapper interno para não brigar com o scroll)
+  if(!reduce) bubs.forEach((b,i)=>gsap.to(b.querySelector('.bub-in'),{y:gsap.utils.random(-12,12),x:gsap.utils.random(-6,6),rotation:gsap.utils.random(-4,4),duration:gsap.utils.random(2.4,3.6),ease:'sine.inOut',yoyo:true,repeat:-1,delay:i*.1}));
+  buildScroll();
+  gsap.to(['#introUi','#skip'],{opacity:1,duration:.6});
+  // trava de 4s
+  holdTween = gsap.to('#holdBar',{scaleX:1,duration:reduce?0.01:4,ease:'none',onComplete:release});
+}
+
+function release(){
+  document.body.classList.remove('locked');
+  lenis.start();
+  $('#introHint').textContent = 'Role para explorar';
+  if (!userTried){                           // ninguém mexeu: a abertura acontece sozinha
+    autoTimer = setTimeout(()=>autoOpen(),250);
+  }
+}
+function autoOpen(){
+  const end = introST ? introST.end : innerHeight;
+  lenis.scrollTo(end+2,{duration:reduce?0:4.2,easing:t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2,lock:false});
+}
+['wheel','touchstart','keydown'].forEach(ev=>addEventListener(ev,()=>{ if(autoTimer){clearTimeout(autoTimer);autoTimer=null} },{passive:true}));
+$('#skip').addEventListener('click',()=>{ if(holdTween) holdTween.progress(1); userTried=false; clearTimeout(autoTimer); document.body.classList.remove('locked'); lenis.start(); autoOpen(); });
+
+/* ---------- scroll: gotas -> fila de vídeos ---------- */
+let introST=null;
+function buildScroll(){
+  const tl = gsap.timeline({defaults:{ease:'none'}});
+  bubs.forEach((b,i)=>{
+    tl.fromTo(b,
+      {x:()=>orbit(i).x, y:()=>orbit(i).y, width:()=>orbit(i).w, height:()=>orbit(i).h, borderRadius:'50%'},
+      {x:()=>rowPos(i).x, y:()=>rowPos(i).y, width:()=>rowPos(i).w, height:()=>rowPos(i).h, borderRadius:16, ease:'power3.inOut', duration:1, immediateRender:false},
+      i*.05);
+    tl.to(b.querySelector('.gloss'),{opacity:0,duration:.6},.3+i*.05);
+    tl.to(b.querySelector('.bub-in'),{y:0,x:0,rotation:0,duration:.6,overwrite:'auto'},.1);
+  });
+  tl.to('#logoWrap',{y:()=>-H()*.5+ (mobile()?70:90), scale:mobile()?.62:.5, duration:1, ease:'power3.inOut'},0)
+    .to('#logoWrap h1',{opacity:0,duration:.4},0)
+    .to(drop,{opacity:0,scale:1.15,duration:.9},0)
+    .to('.tint',{opacity:.25,duration:.9},0)
+    .to(['#introUi','#skip'],{opacity:0,duration:.25},0)
+    .fromTo('#rowLabel',{opacity:0,y:30},{opacity:1,y:0,duration:.4,ease:'power2.out'},.75)
+    .set(bubs,{className:'bub card'},.95)
+    .to('#logoWrap',{opacity:0,y:'-=30',duration:.3},1.0);
+  // se a fila for maior que a tela (mobile), desliza na horizontal
+  tl.to(bubs,{x:(i)=>rowPos(i).x - rowMetrics().overflow, duration:1.1, ease:'none'},1.2);
+  tl.to({},{duration:.25});
+
+  introST = ScrollTrigger.create({
+    trigger:'#intro', start:'top top',
+    end:()=>'+=' + (H()*(mobile()?2.6:2.1) + rowMetrics().overflow*2),
+    pin:true, scrub:1, animation:tl, invalidateOnRefresh:true,
+    onUpdate:self=>{
+      $('#nav').classList.toggle('show', self.progress>.55);
+      $('#fab').classList.toggle('show', self.progress>.9);
+    }
+  });
+  // posiciona o row-label acima da fila
+  const placeLabel=()=>{const r=rowPos(0); gsap.set('#rowLabel',{top:H()/2 + r.y - r.h/2 - (mobile()?64:80)})};
+  placeLabel(); ScrollTrigger.addEventListener('refreshInit',placeLabel);
+  buildSections();
+  ScrollTrigger.refresh();
+}
+
+/* ---------- seções ---------- */
+function buildSections(){
+  // nav sólida após a intro
+  ScrollTrigger.create({start:()=>introST.end-10,end:'max',onToggle:s=>$('#nav').classList.toggle('solid',s.isActive)});
+
+  // manifesto: palavra por palavra
+  const m = $('#manifestoText');
+  m.innerHTML = m.textContent.split(' ').map(w=>`<span class="w">${w}</span>`).join(' ');
+  if(!reduce) gsap.to('#manifestoText .w',{opacity:1,stagger:.08,ease:'none',scrollTrigger:{trigger:'#manifesto',start:'top 70%',end:'bottom 70%',scrub:true}});
+
+  if(!reduce){
+    gsap.utils.toArray('.reveal').forEach(el=>{
+      gsap.to(el,{opacity:1,y:0,duration:1.1,ease:'expo.out',scrollTrigger:{trigger:el,start:'top 88%'}});
+    });
+    gsap.utils.toArray('.svc').forEach((el,i)=>gsap.fromTo(el,{y:80,opacity:0},{y:0,opacity:1,duration:1.1,delay:(i%4)*.08,ease:'expo.out',scrollTrigger:{trigger:'.services',start:'top 85%'}}));
+    gsap.utils.toArray('.step').forEach(st=>{
+      gsap.to(st.querySelector('.bar'),{scaleX:1,ease:'none',scrollTrigger:{trigger:st,start:'top 80%',end:'top 45%',scrub:true}});
+      gsap.from(st.children,{opacity:0,x:30,stagger:.08,duration:1,ease:'expo.out',scrollTrigger:{trigger:st,start:'top 80%'}});
+    });
+    // marquee com velocidade reagindo ao scroll
+    const track=$('#marquee'); track.innerHTML += track.innerHTML;
+    const mq = gsap.to(track,{xPercent:-50,duration:28,ease:'none',repeat:-1});
+    ScrollTrigger.create({onUpdate:s=>{const v=s.getVelocity(); gsap.to(mq,{timeScale:1+Math.min(Math.abs(v)/400,5)*(v<0?-1:1),duration:.2,overwrite:true}); gsap.to(mq,{timeScale:1,duration:1.2,delay:.2})}});
+    // radar
+    gsap.to('#radar .pulse circle',{attr:{r:190},opacity:0,duration:2.6,repeat:-1,ease:'power1.out'});
+    gsap.from('#links path',{strokeDasharray:200,strokeDashoffset:200,duration:1.6,stagger:.12,ease:'power2.out',scrollTrigger:{trigger:'#regiao',start:'top 70%'}});
+    gsap.from('#towns > *',{opacity:0,scale:0,transformOrigin:'center',stagger:.05,duration:.8,ease:'back.out(2)',scrollTrigger:{trigger:'#regiao',start:'top 70%'}});
+    gsap.fromTo('.cta-orb',{scale:.6},{scale:1.1,ease:'none',scrollTrigger:{trigger:'#contato',start:'top bottom',end:'bottom bottom',scrub:true}});
+  } else {
+    gsap.set('.reveal',{opacity:1,y:0});
+  }
+}
+
+/* ---------- vídeos: pausa fora da tela ---------- */
+new IntersectionObserver(es=>es.forEach(e=>{ vids.forEach(v=>{ if(e.isIntersecting && burstDone){const p=v.play(); p&&p.catch&&p.catch(()=>{})} else v.pause(); }) }),{threshold:0}).observe($('#intro'));
+
+/* ---------- modal ---------- */
+const modal=$('#modal'), mv=$('#mVideo'); let cur=0, lastFocus=null;
+function openModal(i){
+  cur=(i+N)%N; mv.src=VIDEOS[cur].src; mv.poster=VIDEOS[cur].poster; mv.muted=false;
+  lastFocus=document.activeElement; modal.classList.add('open'); lenis.stop();
+  mv.play().catch(()=>{}); $('#mClose').focus();
+}
+function closeModal(){ modal.classList.remove('open'); mv.pause(); mv.removeAttribute('src'); mv.load(); if(!document.body.classList.contains('locked')) lenis.start(); lastFocus&&lastFocus.focus(); }
+$('#mClose').onclick=closeModal; $('#mPrev').onclick=()=>openModal(cur-1); $('#mNext').onclick=()=>openModal(cur+1);
+modal.addEventListener('click',e=>{ if(e.target===modal) closeModal(); });
+addEventListener('keydown',e=>{ if(!modal.classList.contains('open'))return; if(e.key==='Escape')closeModal(); if(e.key==='ArrowRight')openModal(cur+1); if(e.key==='ArrowLeft')openModal(cur-1); });
+
+/* ---------- cursor ---------- */
+const cursor=$('#cursor');
+if (matchMedia('(hover:hover)').matches){
+  const xTo=gsap.quickTo(cursor,'x',{duration:.35,ease:'power3'}), yTo=gsap.quickTo(cursor,'y',{duration:.35,ease:'power3'});
+  addEventListener('pointermove',e=>{xTo(e.clientX);yTo(e.clientY)});
+  bubs.forEach(b=>{ b.addEventListener('pointerenter',()=>gsap.to(cursor,{scale:1,duration:.4,ease:'expo.out'})); b.addEventListener('pointerleave',()=>gsap.to(cursor,{scale:0,duration:.3})); });
+  // botões magnéticos
+  document.querySelectorAll('.btn').forEach(btn=>{
+    btn.addEventListener('pointermove',e=>{const r=btn.getBoundingClientRect(); gsap.to(btn,{x:(e.clientX-r.left-r.width/2)*.25,y:(e.clientY-r.top-r.height/2)*.35,duration:.4})});
+    btn.addEventListener('pointerleave',()=>gsap.to(btn,{x:0,y:0,duration:.6,ease:'elastic.out(1,.4)'}));
+  });
+}
+
+/* ---------- âncoras ---------- */
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
+  const id=a.getAttribute('href'); if(id.length<2)return; const t=document.querySelector(id); if(!t)return;
+  e.preventDefault(); if(document.body.classList.contains('locked')) return;
+  lenis.scrollTo(id==='#trabalhos'||id==='#intro' ? (id==='#intro'?0:introST.end) : t, {offset: id==='#intro'||id==='#trabalhos'?0:-70, duration:1.4});
+}));
+
+/* ---------- start ---------- */
+let started=false; const go=()=>{ if(!started){started=true; startIntro();} };
+if (drop.readyState>=3) go(); else { drop.addEventListener('canplay',go,{once:true}); setTimeout(go,2500); }
+let rT; addEventListener('resize',()=>{ clearTimeout(rT); rT=setTimeout(()=>{ if(!introST){ bubs.forEach((b,i)=>{const o=orbit(i); gsap.set(b,{x:o.x,y:o.y,width:o.w,height:o.h})}); } },200); });
+</script>
+</body>
+</html>
