@@ -1,0 +1,332 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="description" content="Portfólio de Igor Teixeira, Storymaker & Social Media em São Paulo: Reels, tabela de valores e pacotes mensais."><meta property="og:title" content="Igor Teixeira — Portfólio"><meta property="og:image" content="https://igorteixeiramovie.vercel.app/portfolio/media/hero.jpg"><link rel="icon" href="../media/avatar.svg"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Igor Teixeira Portfólio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=League+Spartan:wght@600;800;900&family=Sora:wght@300;400;600;700&display=swap">
+<style>
+/* Layout: slides do portfólio viram faixas de página: REC. (abertura) → CREATIVE PORTFOLIO (celulares) → VALORES → PRONTO PARA (contato) */
+:root{
+  --paper:#F1EFEC;         /* fundo papel, como no portfólio de referência */
+  --paper-2:#E7E4E0;
+  --ink:#16121F;           /* texto principal */
+  --ink-soft:#5B5566;
+  --deep:#2B1360;          /* violeta profundo das letras gigantes */
+  --violet:#7B2FF7; --cyan:#00C8E0; --pink:#FF2BD6;
+  --grad:linear-gradient(100deg,#00C8E0 0%,#7B2FF7 52%,#FF2BD6 100%);
+  --ghost:rgba(123,47,247,.13);
+  --line:rgba(22,18,31,.14);
+  --f-display:"Anton","Impact","Arial Narrow",sans-serif;
+  --f-heavy:"League Spartan","Arial Black","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Sora",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55;margin:0;overflow-x:hidden}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--violet);outline-offset:3px;border-radius:6px}
+.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* topo */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--paper)}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand svg{width:34px;height:34px;flex:none}
+.brand b{font-family:var(--f-body);font-weight:700;font-size:20px;letter-spacing:-.6px}
+.nav{display:flex;align-items:center;gap:22px;font-size:14px;font-weight:600}
+.nav a{text-decoration:none;color:var(--ink-soft)}
+.nav a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:999px;font-family:var(--f-heavy);font-weight:800;font-size:15px;letter-spacing:.6px;text-decoration:none;text-transform:uppercase;border:0;cursor:pointer}
+.btn-ink{background:var(--ink);color:var(--paper)}
+.btn-grad{background:var(--grad);color:#fff;box-shadow:0 10px 30px rgba(123,47,247,.28)}
+.btn svg{width:18px;height:18px}
+@media (max-width:720px){.nav a.hide-m{display:none}.nav{gap:12px}.top .btn{padding:10px 14px;font-size:13px}}
+
+/* ===== 1. REC. ===== */
+.rec{position:relative;overflow:hidden;padding-block:40px 56px}
+.rec .stage{position:relative;display:grid;grid-template-columns:1fr minmax(240px,340px) 1fr;align-items:end;gap:20px;min-height:min(78vh,720px)}
+.rec-word{position:absolute;left:50%;top:6%;transform:translateX(-50%);font-family:var(--f-display);font-size:clamp(150px,33vw,460px);line-height:.82;color:var(--deep);letter-spacing:-.02em;white-space:nowrap;user-select:none;pointer-events:none}
+.rec-word .dot{color:var(--pink)}
+.rec-word span{display:inline-block;animation:flow .9s cubic-bezier(.2,.8,.2,1) both}
+.rec-word span:nth-child(2){animation-delay:.08s}.rec-word span:nth-child(3){animation-delay:.16s}.rec-word span:nth-child(4){animation-delay:.24s}
+@keyframes flow{from{transform:translateY(38%);clip-path:inset(0 0 100% 0)}to{transform:none;clip-path:inset(0 0 0 0)}}
+.me{position:relative;z-index:2;grid-column:2;aspect-ratio:9/16;max-width:100%;border-radius:22px;overflow:hidden;background:#222;box-shadow:0 30px 60px -20px rgba(22,18,31,.55);animation:rise 1s .2s cubic-bezier(.2,.8,.2,1) both}
+.me video,.me img{width:100%;height:100%;object-fit:cover;display:block}
+.me::after{content:"";position:absolute;inset:auto 0 0;height:40%;background:linear-gradient(0deg,rgba(22,18,31,.55),transparent)}
+.recdot{position:absolute;z-index:3;top:14px;left:14px;display:flex;align-items:center;gap:8px;font-family:var(--f-heavy);font-weight:800;font-size:13px;letter-spacing:2px;color:#fff}
+.recdot i{width:10px;height:10px;border-radius:50%;background:#ff3045;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:.15}}
+@keyframes rise{from{transform:translateY(60px) scale(.94)}to{transform:none}}
+.hello{position:relative;z-index:3;grid-column:1;justify-self:end;text-align:right;padding-bottom:12%}
+.hello small{display:block;font-family:var(--f-heavy);font-weight:800;font-size:clamp(14px,1.4vw,18px);letter-spacing:2px;color:var(--ink-soft)}
+.hello strong{display:block;font-family:var(--f-heavy);font-weight:900;font-size:clamp(30px,4vw,54px);line-height:.92;letter-spacing:-.5px;text-transform:uppercase;color:var(--deep)}
+.role{position:relative;z-index:3;grid-column:3;padding-bottom:6%}
+.role .r1{font-family:var(--f-heavy);font-weight:900;font-size:clamp(34px,4.6vw,64px);line-height:.9;text-transform:uppercase;color:transparent;-webkit-text-stroke:2px var(--deep)}
+.role .r2{display:inline-block;margin-top:8px;padding:6px 12px;background:var(--deep);color:var(--paper);font-family:var(--f-heavy);font-weight:800;font-size:clamp(15px,1.5vw,20px);letter-spacing:1.5px;text-transform:uppercase}
+.year{position:absolute;left:0;bottom:0;font-family:var(--f-heavy);font-weight:800;font-size:15px;letter-spacing:3px;color:var(--ink-soft)}
+.year b{color:var(--deep)}
+.lede{max-width:56ch;margin:28px auto 0;text-align:center;color:var(--ink-soft);font-size:17px}
+.lede .actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:18px}
+.btn-line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+@media (max-width:820px){
+  .rec .stage{grid-template-columns:1fr;justify-items:center;min-height:0;padding-top:calc(clamp(150px,33vw,460px)*.84 + 10px)}
+  .rec-word{top:0}
+  .me{grid-column:1;width:min(300px,72vw)}
+  .hello,.role{grid-column:1;justify-self:center;text-align:center;padding:0}
+  .hello{order:-1;margin-top:8px}
+  .year{position:static;order:3}
+}
+
+/* ===== 2. CREATIVE PORTFOLIO ===== */
+.port{position:relative;overflow:hidden;padding-block:72px 64px;background:var(--paper-2)}
+.ghost{position:absolute;inset:auto 0;text-align:center;font-family:var(--f-display);line-height:.8;color:transparent;-webkit-text-stroke:2px var(--ghost);font-size:clamp(110px,22vw,330px);letter-spacing:-.01em;pointer-events:none;user-select:none;white-space:nowrap}
+.ghost.fill{color:var(--ghost);-webkit-text-stroke:0}
+.port .g1{top:30px}.port .g2{bottom:28px}
+.sec-head{position:relative;z-index:2;display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:12px 24px;margin-bottom:28px}
+.eyebrow{font-family:var(--f-heavy);font-weight:800;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--violet)}
+h2{font-family:var(--f-display);font-weight:400;font-size:clamp(40px,6vw,78px);line-height:.95;margin:6px 0 0;text-transform:uppercase;letter-spacing:.2px;text-wrap:balance;color:var(--ink)}
+.sec-head p{max-width:42ch;margin:0;color:var(--ink-soft)}
+.rail{position:relative;z-index:2;display:grid;grid-auto-flow:column;grid-auto-columns:clamp(200px,23%,270px);gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 4px 18px;scrollbar-width:thin}
+.phone{scroll-snap-align:start;display:flex;flex-direction:column;align-items:center;gap:14px;margin:0}
+.device{position:relative;width:100%;aspect-ratio:9/19;border-radius:38px;padding:10px;background:#0d0b12;box-shadow:0 24px 50px -22px rgba(22,18,31,.6),inset 0 0 0 2px #2b2833}
+.device::before{content:"";position:absolute;z-index:3;top:16px;left:50%;transform:translateX(-50%);width:28%;height:16px;border-radius:12px;background:#0d0b12}
+.screen{position:relative;width:100%;height:100%;border-radius:30px;overflow:hidden;background:#000}
+.screen video,.screen img{width:100%;height:100%;object-fit:cover;display:block}
+.snd{position:absolute;z-index:4;right:12px;bottom:12px;width:40px;height:40px;border-radius:50%;border:0;display:grid;place-items:center;background:rgba(0,0,0,.55);color:#fff;cursor:pointer}
+.snd svg{width:20px;height:20px}
+.phone figcaption{font-family:var(--f-heavy);font-weight:900;font-size:16px;letter-spacing:1px;text-transform:uppercase;text-align:center;color:var(--deep);line-height:1.05}
+.phone figcaption small{display:block;font-weight:600;font-size:12px;letter-spacing:2px;color:var(--ink-soft);margin-top:4px}
+.hint{position:relative;z-index:2;font-size:13px;color:var(--ink-soft);margin-top:4px}
+
+/* ===== 3. VALORES ===== */
+.prices{position:relative;overflow:hidden;padding-block:80px}
+.prices .g3{top:20px}
+.note{position:relative;z-index:2;display:inline-flex;gap:10px;align-items:center;padding:8px 14px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:13px;font-weight:600;color:var(--ink-soft)}
+.note i{width:8px;height:8px;border-radius:50%;background:var(--grad)}
+.group{position:relative;z-index:2;margin-top:44px}
+.group h3{display:flex;align-items:baseline;gap:14px;font-family:var(--f-heavy);font-weight:900;font-size:clamp(22px,2.4vw,30px);text-transform:uppercase;letter-spacing:.3px;margin:0 0 6px;color:var(--deep)}
+.group h3 em{font-style:normal;font-family:var(--f-display);font-weight:400;color:transparent;-webkit-text-stroke:1.5px var(--violet);font-size:1.5em;line-height:.8}
+.group > p{margin:0 0 18px;color:var(--ink-soft);max-width:62ch}
+.tbl{background:#fff;border-radius:18px;border:1px solid var(--line);overflow:hidden}
+.row{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;padding:18px 22px;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.row .s{min-width:0}
+.row .s b{display:block;font-size:17px}
+.row .s span{font-size:14px;color:var(--ink-soft)}
+.price{font-family:var(--f-heavy);font-weight:900;font-size:clamp(22px,2.4vw,30px);letter-spacing:-.3px;white-space:nowrap;font-variant-numeric:tabular-nums;text-align:right;color:var(--ink)}
+.price small{display:block;font-family:var(--f-body);font-weight:600;font-size:12px;letter-spacing:.5px;color:var(--ink-soft);text-transform:none}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card{display:flex;flex-direction:column;gap:14px;padding:24px 22px;background:#fff;border:1px solid var(--line);border-radius:18px}
+.card.dark{background:var(--deep);color:#fff;border-color:transparent}
+.card .tag{font-family:var(--f-heavy);font-weight:800;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--violet)}
+.card.dark .tag{color:#C9B5FF}
+.card .val{font-family:var(--f-display);font-size:clamp(34px,3.4vw,46px);line-height:1;font-variant-numeric:tabular-nums}
+.card .val small{font-family:var(--f-body);font-size:15px;font-weight:600;opacity:.75}
+.card ul{list-style:none;padding:0;margin:0;display:grid;gap:8px;font-size:15px}
+.card li{display:grid;grid-template-columns:18px 1fr;gap:8px}
+.card li::before{content:"";width:8px;height:8px;margin-top:8px;border-radius:50%;background:var(--grad)}
+.card .foot{margin-top:auto;font-size:13px;opacity:.75}
+.fine{margin-top:14px;font-size:13px;color:var(--ink-soft)}
+@media (max-width:860px){.cards{grid-template-columns:1fr}}
+
+/* ===== 4. PRONTO PARA ===== */
+.cta{position:relative;overflow:hidden;padding-block:72px 64px;background:#fff}
+.cta .grid{display:grid;grid-template-columns:1.25fr .75fr;gap:28px;align-items:center}
+.cta h2{font-size:clamp(56px,9.5vw,140px);line-height:.86;color:var(--deep)}
+.cta h2 .q{color:transparent;-webkit-text-stroke:2px var(--deep)}
+.cta .dm{margin:18px 0 6px;font-family:var(--f-heavy);font-weight:900;font-size:clamp(24px,3vw,36px);text-transform:uppercase}
+.cta .contact{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:18px}
+.copyline{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:14px;font-size:14px;color:var(--ink-soft)}
+.copyline code{font-family:var(--f-body);font-weight:700;color:var(--ink);user-select:all}
+.copy{border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:6px 12px;font:600 12px var(--f-body);cursor:pointer}
+.photo{position:relative;aspect-ratio:4/5;border-radius:22px;overflow:hidden;max-width:100%}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;filter:grayscale(1) contrast(1.05)}
+.photo::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,transparent 55%,rgba(123,47,247,.35))}
+@media (max-width:820px){.cta .grid{grid-template-columns:1fr}.photo{max-width:420px}}
+
+footer{background:var(--ink);color:#cfc9da;font-size:13px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;padding-block:22px}
+footer .brand b{color:#fff;font-size:17px}
+
+.reveal{transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.pre{transform:translateY(28px)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00C8E0"/><stop offset=".55" stop-color="#7B2FF7"/><stop offset="1" stop-color="#FF2BD6"/></linearGradient>
+    <symbol id="logo" viewBox="0 0 100 100"><g transform="rotate(-24 50 50)"><path d="M40 24 L86 50 L40 76 Z" fill="url(#lg)" stroke="url(#lg)" stroke-width="10" stroke-linejoin="round"/><path d="M12 34 L28 50 L12 66" fill="none" stroke="#00C8E0" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></g></symbol>
+    <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.6-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.6-.3Z"/></symbol>
+    <symbol id="mute" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M11 5 6 9H3v6h3l5 4V5Zm11 4-6 6m0-6 6 6"/></symbol>
+    <symbol id="sound" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M11 5 6 9H3v6h3l5 4V5Zm4.5 3.5a5 5 0 0 1 0 7m2.8-9.8a9 9 0 0 1 0 12.6"/></symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Igor Teixeira, início"><svg aria-hidden="true"><use href="#logo"/></svg><b class="grad-text">igor teixeira</b></a>
+    <nav class="nav" aria-label="Seções">
+      <a class="hide-m" href="#portfolio">Portfólio</a>
+      <a class="hide-m" href="#valores">Valores</a>
+      <a class="btn btn-ink" href="https://wa.me/5511969153683" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Orçamento</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <!-- 1. REC. -->
+  <section class="rec" aria-labelledby="t-rec">
+    <div class="wrap">
+      <div class="stage">
+        <div class="rec-word" aria-hidden="true"><span>R</span><span>E</span><span>C</span><span class="dot">.</span></div>
+        <div class="hello"><small>OLÁ, SOU O</small><strong id="t-rec">Igor<br>Teixeira</strong></div>
+        <div class="me">
+          <video src="media/hero.mp4" poster="media/hero.jpg" autoplay muted loop playsinline aria-label="Igor gravando um cliente com o celular no estabilizador"></video>
+          <div class="recdot" aria-hidden="true"><i></i>REC</div>
+        </div>
+        <div class="role"><div class="r1">Storymaker</div><div class="r2">&amp; Social Media</div></div>
+        <div class="year">SÃO PAULO · <b>2026</b></div>
+      </div>
+      <div class="lede">
+        Vídeos verticais que fazem o seu negócio ser visto: roteiro, gravação no local, edição com motion e gestão do seu Instagram.
+        <div class="actions">
+          <a class="btn btn-grad" href="#portfolio">Ver portfólio</a>
+          <a class="btn btn-line" href="#valores">Tabela de valores</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. CREATIVE PORTFOLIO -->
+  <section class="port" id="portfolio" aria-labelledby="t-port">
+    <div class="ghost g1" aria-hidden="true">CREATIVE</div>
+    <div class="ghost fill g2" aria-hidden="true">PORTFOLIO</div>
+    <div class="wrap">
+      <div class="sec-head">
+        <div><div class="eyebrow">Trabalhos recentes</div><h2 id="t-port">Creative portfolio</h2></div>
+        <p>Reels gravados e editados para negócios locais. Toque no alto-falante para ouvir.</p>
+      </div>
+      <div class="rail" id="rail">
+        <figure class="phone"><div class="device"><div class="screen"><video data-src="../media/v1.mp4" poster="../media/p1.jpg" muted loop playsinline preload="none"></video><button class="snd" type="button" aria-label="Ativar som"><svg><use href="#mute"/></svg></button></div></div><figcaption>Reels para seu negócio<small>Automotivo</small></figcaption></figure>
+        <figure class="phone"><div class="device"><div class="screen"><video data-src="../media/v3.mp4" poster="../media/p3.jpg" muted loop playsinline preload="none"></video><button class="snd" type="button" aria-label="Ativar som"><svg><use href="#mute"/></svg></button></div></div><figcaption>Storymaker<small>Salão de beleza</small></figcaption></figure>
+        <figure class="phone"><div class="device"><div class="screen"><video data-src="../media/v5.mp4" poster="../media/p5.jpg" muted loop playsinline preload="none"></video><button class="snd" type="button" aria-label="Ativar som"><svg><use href="#mute"/></svg></button></div></div><figcaption>Editor de vídeo<small>Estética</small></figcaption></figure>
+        <figure class="phone"><div class="device"><div class="screen"><video data-src="../media/v7.mp4" poster="../media/p7.jpg" muted loop playsinline preload="none"></video><button class="snd" type="button" aria-label="Ativar som"><svg><use href="#mute"/></svg></button></div></div><figcaption>Lançamentos e eventos<small>Gastronomia</small></figcaption></figure>
+        <figure class="phone"><div class="device"><div class="screen"><video data-src="../media/v4.mp4" poster="../media/p4.jpg" muted loop playsinline preload="none"></video><button class="snd" type="button" aria-label="Ativar som"><svg><use href="#mute"/></svg></button></div></div><figcaption>Vitrine em vídeo<small>Ótica</small></figcaption></figure>
+        <figure class="phone"><div class="device"><div class="screen"><video data-src="../media/v6.mp4" poster="../media/p6.jpg" muted loop playsinline preload="none"></video><button class="snd" type="button" aria-label="Ativar som"><svg><use href="#mute"/></svg></button></div></div><figcaption>Vídeo com fala<small>Tapeçaria e couros</small></figcaption></figure>
+        <figure class="phone"><div class="device"><div class="screen"><video data-src="../media/v2.mp4" poster="../media/p2.jpg" muted loop playsinline preload="none"></video><button class="snd" type="button" aria-label="Ativar som"><svg><use href="#mute"/></svg></button></div></div><figcaption>Detalhes de produto<small>Automotivo</small></figcaption></figure>
+      </div>
+      <div class="hint">Arraste para o lado para ver todos os trabalhos.</div>
+    </div>
+  </section>
+
+  <!-- 3. VALORES -->
+  <section class="prices" id="valores" aria-labelledby="t-val">
+    <div class="ghost g3" aria-hidden="true">VALORES</div>
+    <div class="wrap">
+      <div class="sec-head">
+        <div><div class="eyebrow">Investimento</div><h2 id="t-val">Tabela de valores</h2></div>
+        <span class="note"><i></i>Valores 2026</span>
+      </div>
+
+      <div class="group reveal">
+        <h3><em>01</em>Vídeo avulso</h3>
+        <p>Reels e TikTok para quem precisa de um vídeo pontual.</p>
+        <div class="tbl" role="table" aria-label="Valores de vídeo avulso">
+          <div class="row" role="row"><div class="s" role="cell"><b>Só edição</b><span>Você manda o material e eu edito</span></div><div class="price" role="cell">R$ 120 a 200<small>por vídeo</small></div></div>
+          <div class="row" role="row"><div class="s" role="cell"><b>Gravação + edição</b><span>1 vídeo gravado no seu negócio e editado</span></div><div class="price" role="cell">R$ 300 a 450<small>por vídeo</small></div></div>
+          <div class="row" role="row"><div class="s" role="cell"><b>Meia diária de gravação</b><span>Vários vídeos gravados de uma vez</span></div><div class="price" role="cell">R$ 350 a 500<small>edição cobrada à parte</small></div></div>
+        </div>
+      </div>
+
+      <div class="group reveal">
+        <h3><em>02</em>Pacotes mensais</h3>
+        <p>Vídeo + social media: gravação, edição e o seu Instagram em dia, todo mês.</p>
+        <div class="cards">
+          <article class="card"><div class="tag">Essencial</div><div class="val">R$ 900 a 1.200 <small>/mês</small></div>
+            <ul><li>4 Reels gravados e editados</li><li>8 artes</li><li>Postagem</li></ul></article>
+          <article class="card dark"><div class="tag">Presença</div><div class="val">R$ 1.300 a 1.700 <small>/mês</small></div>
+            <ul><li>6 Reels gravados e editados</li><li>12 artes</li><li>Stories 3x por semana</li></ul></article>
+          <article class="card"><div class="tag">Completo</div><div class="val">R$ 1.800 a 2.300 <small>/mês</small></div>
+            <ul><li>8 Reels gravados e editados</li><li>12 artes</li><li>Stories</li><li>Relatório mensal</li></ul></article>
+        </div>
+      </div>
+
+      <div class="group reveal">
+        <h3><em>03</em>Adicional</h3>
+        <p>Pode ser somado a qualquer pacote mensal.</p>
+        <div class="tbl" role="table" aria-label="Serviço adicional">
+          <div class="row" role="row"><div class="s" role="cell"><b>Tráfego pago</b><span>Gestão de anúncios. A verba de anúncio é paga à parte, direto à plataforma.</span></div><div class="price" role="cell">+ R$ 400 a 600<small>por mês</small></div></div>
+        </div>
+        <div class="fine">Gravações presenciais em São Paulo e Grande SP. Gestão de redes atende todo o Brasil.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. PRONTO PARA -->
+  <section class="cta" id="contato" aria-labelledby="t-cta">
+    <div class="wrap grid">
+      <div>
+        <div class="eyebrow">Vamos gravar</div>
+        <h2 id="t-cta">Pronto para<br><span class="q">fazer acontecer?</span></h2>
+        <div class="dm grad-text">Chama na DM!</div>
+        <div class="contact">
+          <a class="btn btn-grad" href="https://wa.me/5511969153683" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Chamar no WhatsApp</a>
+          <a class="btn btn-line" href="https://igorteixeiramovie.vercel.app/" target="_blank" rel="noopener">Site completo</a>
+        </div>
+        <div class="copyline">WhatsApp <code id="phone">(11) 96915-3683</code><button class="copy" type="button" data-copy="phone">Copiar</button></div>
+      </div>
+      <div class="photo"><img src="media/cta.jpg" alt="Igor Teixeira gravando com o celular no estabilizador"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#inicio"><svg aria-hidden="true" width="26" height="26"><use href="#logo"/></svg><b>igor teixeira</b></a>
+    <span>Storymaker &amp; Social Media · São Paulo – SP · 2026</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // celulares: carregam e tocam quando aparecem na tela
+  const vids=[...document.querySelectorAll('.screen video')];
+  const io='IntersectionObserver' in window ? new IntersectionObserver(es=>{
+    es.forEach(e=>{const v=e.target;
+      if(e.isIntersecting){ if(!v.src) v.src=v.dataset.src; v.play().catch(()=>{}); }
+      else v.pause();
+    });
+  },{threshold:.35}) : null;
+  vids.forEach(v=>{ if(io) io.observe(v); else {v.src=v.dataset.src;} });
+
+  // som: um celular por vez
+  document.querySelectorAll('.snd').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const v=b.parentElement.querySelector('video'); const turnOn=v.muted;
+      vids.forEach(o=>{o.muted=true;});
+      document.querySelectorAll('.snd').forEach(x=>{x.querySelector('use').setAttribute('href','#mute');x.setAttribute('aria-label','Ativar som');});
+      if(turnOn){ if(!v.src) v.src=v.dataset.src; v.muted=false; v.play().catch(()=>{}); b.querySelector('use').setAttribute('href','#sound'); b.setAttribute('aria-label','Desativar som'); }
+    });
+  });
+
+  // copiar telefone
+  document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',()=>{
+    const t=document.getElementById(b.dataset.copy).textContent;
+    const done=()=>{b.textContent='Copiado';setTimeout(()=>b.textContent='Copiar',1600);};
+    if(navigator.clipboard){navigator.clipboard.writeText(t).then(done).catch(()=>{const r=document.createRange();r.selectNodeContents(document.getElementById(b.dataset.copy));const s=getSelection();s.removeAllRanges();s.addRange(r);});}
+  }));
+
+  // entrada suave das tabelas (conteudo sempre visivel; so desliza)
+  const rv=[...document.querySelectorAll('.reveal')];
+  if('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+    const o2=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){e.target.classList.remove('pre');o2.unobserve(e.target);} }),{threshold:.1});
+    rv.forEach(el=>{ const r=el.getBoundingClientRect(); if(r.top>innerHeight){el.classList.add('pre');o2.observe(el);} });
+  }
+})();
+</script>
+
+</body></html>
